@@ -1,0 +1,78 @@
+{
+  "Signature Sandwich": {
+    "PB&J": {
+      "In Store": {
+        "banana": 1,
+        "marshmallow": 0.75,
+        "apple": 1,
+        "grilled": 2.5,
+        "raisinBread": 3.25,
+        "large": 2.0,
+        "small": 0.6
+      },
+      "Delivery": {
+        "banana": 1.5,
+        "marshmallow": 1.75,
+        "apple": 1.25,
+        "grilled": 2.5,
+        "raisinBread": 4.25,
+        "large": 2.0,
+        "small": 0.6
+      }
+    },
+    "PB Triple Decker": {
+      "In Store": {
+        "banana": 1,
+        "marshmallow": 0.75,
+        "apple": 1,
+        "grilled": 2.5,
+        "raisinBread": 3.25,
+        "large": 2.0,
+        "small": 0.6
+      },
+      "Delivery": {
+        "banana": 1,
+        "marshmallow": 0.75,
+        "apple": 1,
+        "grilled": 2.5,
+        "raisinBread": 3.25,
+        "large": 2.0,
+        "small": 0.6
+      }
+    },
+    "PB Quad Decker": {
+      "In Store": {
+        "banana": 1,
+        "marshmallow": 0.75,
+        "apple": 1,
+        "grilled": 2.5,
+        "raisinBread": 3.25,
+        "large": 2.0,
+        "small": 0.6
+      },
+      "Delivery": {
+        "banana": 1,
+        "marshmallow": 0.75,
+        "apple": 1,
+        "grilled": 2.5,
+        "raisinBread": 3.25,
+        "large": 2.0,
+        "small": 0.6
+      }
+    }
+  },
+  "Other Sandwich": {
+    "Turkey": {
+      "In Store": {
+        "bacon": 3,
+        "large": 2.0,
+        "small": 0.6
+      },
+      "Delivery": {
+        "bacon": 3,
+        "large": 2.0,
+        "small": 0.6
+      }
+    }
+  }
+}

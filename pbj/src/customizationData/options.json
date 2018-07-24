@@ -1,0 +1,38 @@
+{
+  "banana": {
+    "label": "Banana Slices",
+    "type": "subtotal"
+  },
+  "marshmallow": {
+    "label": "Marshmallow",
+    "type": "subtotal"
+  },
+  "apple": {
+    "label": "Apple Slices",
+    "type": "subtotal"
+  },
+  "bacon": {
+    "label": "Bacon",
+    "type": "subtotal"
+  },
+  "grilled": {
+    "label": "Grilled",
+    "type": "toggle"
+  },
+  "raisinBread": {
+    "label": "Cinnamon Raisin Bread",
+    "type": "toggle"
+  },
+  "large": {
+    "label": "Large Size",
+    "type": "multiplier"
+  },
+  "small": {
+    "label": "Small Size",
+    "type": "multiplier"
+  },
+  "neighborDiscount": {
+    "label": "Neighbor Discount",
+    "type": "multiplier"
+  }
+}
