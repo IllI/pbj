@@ -8,7 +8,8 @@
         "grilled": 2.5,
         "raisinBread": 3.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 3
       },
       "Delivery": {
         "banana": 1.5,
@@ -17,7 +18,8 @@
         "grilled": 2.5,
         "raisinBread": 4.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 3
       }
     },
     "PB Triple Decker": {
@@ -28,7 +30,8 @@
         "grilled": 2.5,
         "raisinBread": 3.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 6
       },
       "Delivery": {
         "banana": 1,
@@ -37,7 +40,8 @@
         "grilled": 2.5,
         "raisinBread": 3.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 6
       }
     },
     "PB Quad Decker": {
@@ -48,7 +52,8 @@
         "grilled": 2.5,
         "raisinBread": 3.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 7
       },
       "Delivery": {
         "banana": 1,
@@ -57,7 +62,8 @@
         "grilled": 2.5,
         "raisinBread": 3.25,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 7
       }
     }
   },
@@ -66,12 +72,14 @@
       "In Store": {
         "bacon": 3,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 5
       },
       "Delivery": {
         "bacon": 3,
         "large": 2.0,
-        "small": 0.6
+        "small": 0.6,
+        "basePrice": 5
       }
     }
   }

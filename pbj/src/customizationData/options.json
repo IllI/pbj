@@ -3,6 +3,10 @@
     "label": "Banana Slices",
     "type": "subtotal"
   },
+  "basePrice": {
+     "label": "Base Price",
+     "type": "basePrice"
+  },
   "marshmallow": {
     "label": "Marshmallow",
     "type": "subtotal"

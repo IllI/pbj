@@ -7,10 +7,14 @@ import Toggle from './Toggle';
 class Total extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log('total', props);
     // Initialize all values to 0
     const initialValues = Object.keys(props.options).reduce((obj, key) => {
-      obj[key] = 0;
+      if (key==="basePrice"){
+            obj[key]=1;
+        } else{
+            obj[key] = 0;
+        }
       return obj;
     }, {});
 
@@ -34,6 +38,11 @@ class Total extends React.Component {
         const option = this.props.options[key];
         const type = option.type;
         switch (type) {
+          case 'basePrice':
+            total+= cost;
+            addOnCosts = total;
+
+            break;
           case 'subtotal':
             total += cost * fieldValue;
             addOnCosts = total;
@@ -89,8 +98,16 @@ class Total extends React.Component {
    * @return {undefined}
    */
   handleToggleChange(e, key) {
+
+
     const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: e.target.checked });
+    if (key === 'large'){
+        nextFieldValues['small'] = 0;
+    } else if (key === 'small'){
+        nextFieldValues['large'] = 0;
+    }
     this.setState({ fieldValues: nextFieldValues });
+
   }
 
   render() {

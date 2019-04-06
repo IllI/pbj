@@ -21,7 +21,8 @@ You can find the configuration data in the `src/customizationData` directory. Th
 
 ## Bug fix
 
-Currently, users can select multiple sizes simultaneously for a sandwich. This doesn't really make sense, and we'd like you to prevent a user from being able to chose both options.
+Currently, users can select multiple sizes simultaneously for a sandwich.
+This doesn't really make sense, and we'd like you to prevent a user from being able to chose both options.
 
 ## What we are looking for
 
