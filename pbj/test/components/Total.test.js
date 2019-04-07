@@ -29,7 +29,8 @@ describe('Sandwiches have default base price', function() {
 });
 describe('Large and Small options are toggled cannot be toggled at the same time', function() {
     let costs = {
-        basePrice: 3
+        basePrice: 3,
+
     }
     let options = {
         basePrice: {label: "Base Price", type: "basePrice"}

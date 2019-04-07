@@ -8,7 +8,10 @@ The app was a bit of a rush job, and we've heard that it could use some refactor
 
 ## Feature request
 
-The app was developed to help us price out custom options for our sandwiches, but we still have to figure out the total cost on our own by adding the base price to the custom costs. Since almost all of our sandwiches are custom, it would be a lot easier if the app did the math for us! We need you to update the app so default prices are configured at the 'pricingModel' level.
+The app was developed to help us price out custom options for our sandwiches, but we still have to figure out
+the total cost on our own by adding the base price to the custom costs. Since almost all of our sandwiches are custom,
+it would be a lot easier if the app did the math for us! We need you to update the app so default prices are configured at
+the 'pricingModel' level.
 
 Here's a user story our project manager dropped off:
 

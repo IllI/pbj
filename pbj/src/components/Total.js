@@ -7,12 +7,12 @@ import Toggle from './Toggle';
 class Total extends React.Component {
   constructor(props) {
     super(props);
-    console.log('total', props);
     // Initialize all values to 0
     const initialValues = Object.keys(props.options).reduce((obj, key) => {
-      if (key==="basePrice"){
+      if (key==="basePrice" ||
+          key==="large"){
             obj[key]=1;
-        } else{
+        } else {
             obj[key] = 0;
         }
       return obj;
