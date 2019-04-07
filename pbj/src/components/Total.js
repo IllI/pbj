@@ -13,7 +13,7 @@ class Total extends React.Component {
       obj[key] = 0;
       return obj;
     }, {});
-
+    initialValues['large']=1;
     this.state = {
       fieldValues: initialValues
     };
@@ -45,10 +45,11 @@ class Total extends React.Component {
             }
             break;
           case 'multiplier':
-            if (fieldValue) {
-              total = addOnCosts * cost;
-            }
-            break;
+              if (fieldValue) {
+                  total += cost;
+                  addOnCosts = total;
+              }
+              break;
         }
       }
     });
@@ -89,9 +90,17 @@ class Total extends React.Component {
    * @return {undefined}
    */
   handleToggleChange(e, key) {
+
+
     const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: e.target.checked });
-    this.setState({ fieldValues: nextFieldValues });
-  }
+if (key === 'large'){
+    nextFieldValues['small'] = 0;
+} else if (key === 'small'){
+    nextFieldValues['large'] = 0;
+}
+this.setState({ fieldValues: nextFieldValues });
+
+}
 
   render() {
     return (
