@@ -7,6 +7,7 @@ const Subtotal = ({
   costLabel,
   totalLabel,
   onChange,
+  onBlur,
   disabled
 }) => (
   <div className="mb-2">
@@ -21,6 +22,7 @@ const Subtotal = ({
           min={0}
           value={fieldValue}
           onChange={onChange}
+          onBlur={onBlur}
           disabled={disabled}
         />
       </div>

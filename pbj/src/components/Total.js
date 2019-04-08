@@ -13,6 +13,7 @@ class Total extends React.Component {
       obj[key] = 0;
       return obj;
     }, {});
+    //set default sandwich choice to large as default price (satisfying
     initialValues['large']=1;
     this.state = {
       fieldValues: initialValues
@@ -38,18 +39,13 @@ class Total extends React.Component {
             total += cost * fieldValue;
             addOnCosts = total;
             break;
+          case 'multiplier':
           case 'toggle':
             if (fieldValue) {
               total += cost;
               addOnCosts = total;
             }
             break;
-          case 'multiplier':
-              if (fieldValue) {
-                  total += cost;
-                  addOnCosts = total;
-              }
-              break;
         }
       }
     });
@@ -71,17 +67,51 @@ class Total extends React.Component {
 
     return formatter.format(cost);
   }
-
+/**
+ * If a Subtotal field is blurred and left blank, reset default value to 0
+ * @param  {Object} e   Event from DOM
+ * @param  {String} key Option to update
+ * @return {undefined}
+ */
+handleBlurChange(e, key) {
+    if (!e.target.value){
+        console.log('non')
+        const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: 0 });
+        this.setState({ fieldValues: nextFieldValues });
+    }
+}
   /**
-   * Update the value for the given sandwich option
-   * @param  {Object} e   Event from DOM
-   * @param  {String} key Option to update
-   * @return {undefined}
-   */
-  handleCountChange(e, key) {
-    const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: parseFloat(e.target.value) });
+ * Update the value for the given sandwich option
+ * @param  {Object} e   Event from DOM
+ * @param  {String} key Option to update
+ * @return {undefined}
+ */
+handleCountChange(e, key) {
+    let value = e.target.value ? e.target.value.toString() : '0';
+    let leadZero = false
+    //Check if 0 is the most significant digit
+    while(value.charAt(0) === '0' &&
+          value.length > 1)
+    {
+        value = value.substr(1);
+        if (!leadZero){
+            leadZero = true;
+        }
+    }
+    //For the case when the user deletes all the characters in the input field, reset value to empty string
+    if (!value){
+        value = 0;
+    }
+    const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: Number(value) });
+    //Masking zero values as react doesn't do validate natively
+    if(leadZero){
+        let resetField = nextFieldValues;
+        console.log('lead', nextFieldValues);
+        resetField[key]=value;
+        this.setState({ fieldValues: resetField });
+    }
     this.setState({ fieldValues: nextFieldValues });
-  }
+}
 
   /**
    * Update the value for the given sandwich option
@@ -90,15 +120,20 @@ class Total extends React.Component {
    * @return {undefined}
    */
   handleToggleChange(e, key) {
-
-
     const nextFieldValues = Object.assign({}, this.state.fieldValues, { [key]: e.target.checked });
-if (key === 'large'){
-    nextFieldValues['small'] = 0;
-} else if (key === 'small'){
-    nextFieldValues['large'] = 0;
-}
-this.setState({ fieldValues: nextFieldValues });
+    //the following conditional statements are to handle the bug of when large and small checkboxs
+    // are both toggled on and when they're both toggled off
+    if (key === 'large'){
+        nextFieldValues['small'] = 0;
+        nextFieldValues['large'] = 1;
+    } else if (key === 'small'){
+        nextFieldValues['small'] = 1;
+        nextFieldValues['large'] = 0;
+    }
+    if (nextFieldValues['small']+nextFieldValues['large']===0){
+        nextFieldValues['large'] = 1;
+    }
+    this.setState({ fieldValues: nextFieldValues });
 
 }
 
@@ -124,6 +159,7 @@ this.setState({ fieldValues: nextFieldValues });
                       totalLabel={`= ${this.formatAsCurrency(cost * fieldValue)}`}
                       fieldValue={fieldValue}
                       onChange={event => this.handleCountChange(event, key)}
+                      onBlur={event => this.handleBlurChange(event, key)}
                     />
                   );
                 }
